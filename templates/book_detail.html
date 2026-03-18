@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Detail</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>📚 NU Book Lounge</h2>
+</nav>
+
+<div class="detail-container">
+
+<img src="
+{% if book.category == 'Adults' %}
+https://images.unsplash.com/photo-1512820790803-83ca734da794
+{% elif book.category == 'Early Readers' %}
+https://images.unsplash.com/photo-1516979187457-637abb4f9353
+{% elif book.category == 'Economic' %}
+https://images.unsplash.com/photo-1454165804606-c3d57bc86b40
+{% elif book.category == 'History' %}
+https://images.unsplash.com/photo-1461360370896-922624d12aa1
+{% elif book.category == 'Travel' %}
+https://images.unsplash.com/photo-1507525428034-b723cf961d3e
+{% endif %}
+">
+
+<h1>{{ book.title }}</h1>
+<p><strong>Category:</strong> {{ book.category }}</p>
+<p>{{ book.description }}</p>
+
+<a href="/" class="btn">Back</a>
+
+</div>
+
+</body>
+</html>

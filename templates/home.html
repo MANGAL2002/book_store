@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NU Book Lounge</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>📚 NU Book Lounge</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/add">Add Book</a>
+        <a href="/about">About</a>
+    </div>
+</nav>
+
+<h2>All Books</h2>
+
+<div class="container">
+{% for book in books %}
+<a href="/book/{{ book.id }}" class="card-link">
+    <div class="card">
+
+        <img src="
+        {% if book.category == 'Adults' %}
+        https://images.unsplash.com/photo-1512820790803-83ca734da794
+        {% elif book.category == 'Early Readers' %}
+        https://images.unsplash.com/photo-1516979187457-637abb4f9353
+        {% elif book.category == 'Economic' %}
+        https://images.unsplash.com/photo-1454165804606-c3d57bc86b40
+        {% elif book.category == 'History' %}
+        https://images.unsplash.com/photo-1461360370896-922624d12aa1
+        {% elif book.category == 'Travel' %}
+        https://images.unsplash.com/photo-1507525428034-b723cf961d3e
+        {% endif %}
+        ">
+
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.category }}</p>
+
+        {% if book.is_new %}
+        <span class="new">New</span>
+        {% endif %}
+    </div>
+</a>
+{% endfor %}
+</div>
+
+<h2>New Books</h2>
+
+<div class="container">
+{% for book in new_books %}
+<div class="card highlight">
+    <img src="
+    {% if book.category == 'Adults' %}
+    https://images.unsplash.com/photo-1512820790803-83ca734da794
+    {% elif book.category == 'Early Readers' %}
+    https://images.unsplash.com/photo-1516979187457-637abb4f9353
+    {% elif book.category == 'Economic' %}
+    https://images.unsplash.com/photo-1454165804606-c3d57bc86b40
+    {% elif book.category == 'History' %}
+    https://images.unsplash.com/photo-1461360370896-922624d12aa1
+    {% elif book.category == 'Travel' %}
+    https://images.unsplash.com/photo-1507525428034-b723cf961d3e
+    {% endif %}
+    ">
+    <h3>{{ book.title }}</h3>
+    <p>{{ book.category }}</p>
+</div>
+{% endfor %}
+</div>
+
+</body>
+</html>

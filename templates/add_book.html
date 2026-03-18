@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Book</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>📚 NU Book Lounge</h2>
+</nav>
+
+<form method="POST" class="form">
+    <input type="text" name="title" placeholder="Book Title" required>
+
+    <select name="category">
+        <option>Adults</option>
+        <option>Early Readers</option>
+        <option>Economic</option>
+        <option>History</option>
+        <option>Travel</option>
+    </select>
+
+    <textarea name="description" placeholder="Description"></textarea>
+
+    <label>
+        <input type="checkbox" name="is_new"> New Book
+    </label>
+
+    <button type="submit">Add Book</button>
+</form>
+
+</body>
+</html>
